@@ -14,7 +14,9 @@ vim.keymap.set("i", "jk", "<ESC>", {noremap = true})
 
 
 
-vim.keymap.set("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
-
+-- Toggle term
+vim.keymap.set("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>")
+vim.keymap.set("n", "<F7>", "<cmd>ToggleTerm direction=float<CR>")
+vim.keymap.set("t", "<F7>", "<cmd>ToggleTerm<CR>")
 -- telescope
 vim.keymap.set("n", "<leader>f", ":Telescope find_files<CR>")
