@@ -26,6 +26,32 @@ vim.opt.smartcase = true            -- but make it case sensitive if an uppercas
 
 -- LSP
 vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('lua_ls')
+
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "*.txt",
+    callback = function()
+        vim.b.completion = false
+    end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = "*.rs",
+    callback = function ()
+        vim.cmd("RustFmt")
+    end
+})
+
+-- show messages on code (error/warning)
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = "●", -- or "", "", etc. for icons
+    spacing = 2,
+  },
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+})
 -- set leader key (Space)
 -- vim.g.mapleader = ' ' 
 -- vim.g.maplocalleader = ' '
