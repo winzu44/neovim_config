@@ -12,8 +12,24 @@ return {
         show_buffer_close_icons = false,
         show_buffer_icons = true, 
         separator_style = "slant",
+         indicator = {
+                        style = 'underline',
+                    },       
         always_show_bufferline = true,
+        offsets = {
+                    {
+                      filetype = "neo-tree",
+                      text = function()
+                        return vim.fn.getcwd()
+                      end,
+                      highlight = "Directory",
+                      text_align = "left"
+                    }
+                  }
+  
+
       },
+        
     })
   end,
 }

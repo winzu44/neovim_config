@@ -20,3 +20,20 @@ vim.keymap.set("n", "<F7>", "<cmd>ToggleTerm direction=float<CR>")
 vim.keymap.set("t", "<F7>", "<cmd>ToggleTerm<CR>")
 -- telescope
 vim.keymap.set("n", "<leader>f", ":Telescope find_files<CR>")
+-- split window
+vim.keymap.set("n", "|", "<cmd>vsplit<CR>")
+vim.keymap.set("n", "\\", "<cmd>split<CR>")
+-- bufferline
+vim.keymap.set("n", "<C-8>", "<cmd>BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<C-7>", "<cmd>BufferLineCyclePrev<CR>")
+vim.keymap.set("n", "<C-6>", function()
+    -- get num of buffers
+    local count = #vim.fn.getbufinfo({ buflisted = 1 })
+    if count > 1 then
+        vim.cmd("BufferLineCyclePrev")
+        vim.cmd("bdelete #")
+    end
+
+
+end)
+
