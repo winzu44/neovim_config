@@ -10,7 +10,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { noremap = true, silent = true })
 -- Esc
-vim.keymap.set("i", "jk", "<ESC>", {noremap = true})
+vim.keymap.set("i", "jk", "<ESC>", { noremap = true })
 
 
 
@@ -33,10 +33,14 @@ vim.keymap.set("n", "<C-6>", function()
         vim.cmd("BufferLineCyclePrev")
         vim.cmd("bdelete #")
     end
-
-
 end)
 
 -- comment
 vim.keymap.set('n', '<leader>/', '<Plug>(comment_toggle_linewise)')
-
+-- text search
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { silent = true })
+-- terminal mode
+vim.keymap.set('t', '<C-p>', '<C-\\><C-n>')
+-- Home and End key
+vim.keymap.set('n', '<Home>', '^')
+vim.keymap.set('n', '<End>', '$')
