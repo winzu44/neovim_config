@@ -42,5 +42,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { silent = true })
 -- terminal mode
 vim.keymap.set('t', '<C-p>', '<C-\\><C-n>')
 -- Home and End key
-vim.keymap.set('n', '<Home>', '^')
-vim.keymap.set('n', '<End>', '$')
+vim.keymap.set({ 'v', 'n', }, '<Home>', '^')
+vim.keymap.set({ 'v', 'n', }, '<End>', 'g_')
+
+vim.keymap.set('i', '<Home>', '<Esc>^i')
+vim.keymap.set('i', '<End>', '<Esc>g_a')
