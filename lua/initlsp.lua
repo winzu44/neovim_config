@@ -67,3 +67,6 @@ vim.lsp.config('ts_ls', {
 
 vim.lsp.config('pyright', {
 })
+
+vim.lsp.config('clangd', {
+})

@@ -9,6 +9,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Save(Space + w), Quit(Space + q)
 vim.keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>u", ":e<CR>", { noremap = true, silent = true })
 -- Esc
 vim.keymap.set("i", "jk", "<ESC>", { noremap = true })
 
