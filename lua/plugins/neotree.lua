@@ -17,8 +17,8 @@ return {
                 filesystem = {
                     follow_current_file = {
                         enabled = true,
-                        use_libuv_file_watcher = true,
                     },
+                    use_libuv_file_watcher = true,
                     window = {
                         mappings = {
                             ['<leader>o'] = 'close_window',
