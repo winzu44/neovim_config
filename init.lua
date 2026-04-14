@@ -7,3 +7,5 @@ require('config.lazy')
 
 
 require('colorscheme')
+
+require('vim._core.ui2').enable()
